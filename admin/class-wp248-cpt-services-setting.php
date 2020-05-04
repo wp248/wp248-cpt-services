@@ -54,4 +54,25 @@ class Wp248_Cpt_Services_Setting {
 		$this->version = $version;
 
 	}
+	public function PluginMenu()
+	{
+		if (post_type_exists( 'services' )) {
+			add_submenu_page(
+				'edit.php?post_type=services',
+				__('Services Settings', 'menu-services-settings'),
+				__('Services Settings', 'menu-services-settings'),
+				'manage_options',
+				'services',
+				array($this, 'RenderPage')
+			);
+		}
+	}
+
+	public function RenderPage(){
+		?>
+		<div class='wrap'>
+			<h2>General Settings for Services</h2>
+		</div>
+		<?php
+	}
 }

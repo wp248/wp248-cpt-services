@@ -153,7 +153,7 @@ class Wp248_Cpt_Services {
 	private function define_admin_hooks() {
 
 		$plugin_admin 	= new Wp248_Cpt_Services_Admin( $this->get_plugin_name(), $this->get_version() );
-		$plugin_setting = new Wp248_Cpt_Services_Setting( $this->get_plugin_name(), $this->get_version() );
+		$plugin_settings = new Wp248_Cpt_Services_Setting( $this->get_plugin_name(), $this->get_version() );
 		$plugin_cpt 	= new Wp248_Cpt_Services_Cpt( $this->get_plugin_name(), $this->get_version() );
 
 
@@ -162,6 +162,9 @@ class Wp248_Cpt_Services {
 
 		/** Start actions */
 		$this->loader->add_action( 'init', $plugin_admin, 'create_service' );
+
+		$this->loader->add_action( 'admin_menu', $plugin_settings, 'PluginMenu' );
+
 
 	}
 
@@ -220,5 +223,4 @@ class Wp248_Cpt_Services {
 	public function get_version() {
 		return $this->version;
 	}
-
 }
