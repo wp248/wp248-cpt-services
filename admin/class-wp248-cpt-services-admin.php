@@ -118,7 +118,7 @@ class Wp248_Cpt_Services_Admin {
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-cpt.php';
 	}
 
-	public function create_service()
+	public function register_service_post_type()
 	{
 		$this->create_custom_post();
 		$this->register_tax_service_category();

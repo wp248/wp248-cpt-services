@@ -161,9 +161,16 @@ class Wp248_Cpt_Services {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		/** Start actions */
-		$this->loader->add_action( 'init', $plugin_admin, 'create_service' );
+		$this->loader->add_action( 'init', $plugin_admin, 'register_service_post_type' );
 
-		$this->loader->add_action( 'admin_menu', $plugin_settings, 'PluginMenu' );
+		/** Setting Page actions */
+		$this->loader->add_action( 'admin_menu', $plugin_settings, 'setup_plugin_options_menu' );
+		/** Setting Tab page1: Display Options */
+		$this->loader->add_action( 'admin_init', $plugin_settings, 'initialize_display_options' );
+		/** Setting Tab page2: Social Options */
+		$this->loader->add_action( 'admin_init', $plugin_settings, 'initialize_tab2_social_options' );
+		/** Setting Tab page3: Input example */
+		$this->loader->add_action( 'admin_init', $plugin_settings, 'initialize_tab2_input_examples' );
 
 
 	}
