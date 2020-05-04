@@ -59,8 +59,8 @@ class Wp248_Cpt_Services_Setting {
 		if (post_type_exists( 'services' )) {
 			add_submenu_page(
 				'edit.php?post_type=services',
-				__('Services Settings', 'menu-services-settings'),
-				__('Services Settings', 'menu-services-settings'),
+				__('Services Settings', 'wp248-cpt-services'),
+				__('Services Settings', 'wp248-cpt-services'),
 				'manage_options',
 				'services',
 				array($this, 'render_settings_page_content')
@@ -150,7 +150,6 @@ class Wp248_Cpt_Services_Setting {
 	{
 		// If the theme options don't exist, create them.
 		if( false == get_option( 'wp248_services_display_options' ) ) {
-			echo "<h2>theme options don't exist</h2>";
 			$default_array = $this->default_display_options();
 			add_option( 'wp248_services_display_options', $default_array );
 		}
@@ -195,6 +194,8 @@ class Wp248_Cpt_Services_Setting {
 			var_dump($options);
 		}
 		echo '<p>' . __( 'Select which areas of content you wish to display.', 'wp248-cpt-services' ) . '</p>';
+		echo '<p>' . __( '<small><i>* Check WP248 Elementor theme for instructions</i></small>', 'wp248-cpt-services' ) . '</p>';
+
 	} // en
 
 

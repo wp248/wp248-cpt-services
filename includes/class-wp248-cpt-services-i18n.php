@@ -33,7 +33,6 @@ class Wp248_Cpt_Services_i18n {
 	 * @since    1.0.0
 	 */
 	public function load_plugin_textdomain() {
-
 		load_plugin_textdomain(
 			'wp248-cpt-services',
 			false,

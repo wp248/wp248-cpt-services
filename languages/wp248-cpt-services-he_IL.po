@@ -3,27 +3,33 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP248 CPT Services 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp248-cpt-services\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp248-cpt-"
+"services\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-05-04T20:51:41+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha\n"
+"PO-Revision-Date: 2020-05-04 14:01-0700\n"
+"X-Generator: Poedit 2.3\n"
 "X-Domain: wp248-cpt-services\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"Language: he_IL\n"
 
 #. Plugin Name of the plugin
 msgid "WP248 CPT Services"
-msgstr ""
+msgstr "‫WP248 שירותים"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/wp248/wp248-cpt-services"
 msgstr ""
 
 #. Description of the plugin
-msgid "This is a short description of what the plugin does. It's displayed in the WordPress admin area."
+msgid ""
+"This is a short description of what the plugin does. It's displayed in the "
+"WordPress admin area."
 msgstr ""
 
 #. Author of the plugin
@@ -36,58 +42,58 @@ msgstr ""
 
 #: admin/class-wp248-cpt-services-admin.php:136
 msgid "Categories"
-msgstr ""
+msgstr "קטגוריות"
 
 #: admin/class-wp248-cpt-services-admin.php:137
 msgid "Service Category"
-msgstr ""
+msgstr "קטגוריה"
 
 #: admin/class-wp248-cpt-services-admin.php:141
 msgid "Category"
-msgstr ""
+msgstr "קטגוריה"
 
 #: admin/class-wp248-cpt-services-admin.php:167
 #: admin/class-wp248-cpt-services-admin.php:172
 msgid "Services"
-msgstr ""
+msgstr "שרותים"
 
 #: admin/class-wp248-cpt-services-admin.php:168
 msgid "Service"
-msgstr ""
+msgstr "שרות"
 
 #: admin/class-wp248-cpt-services-setting.php:62
 #: admin/class-wp248-cpt-services-setting.php:63
 msgid "Services Settings"
-msgstr ""
+msgstr "הגדרות כלליות לשרותים"
 
 #: admin/class-wp248-cpt-services-setting.php:79
 msgid "General Settings for Services"
-msgstr ""
+msgstr "הגדרות כלליות לשרותים"
 
 #: admin/class-wp248-cpt-services-setting.php:91
 #: admin/class-wp248-cpt-services-setting.php:159
 msgid "Display Options"
-msgstr ""
+msgstr "אפשרויות תצוגה"
 
 #: admin/class-wp248-cpt-services-setting.php:92
 msgid "Social Options"
-msgstr ""
+msgstr "אופציות חברתיות"
 
 #: admin/class-wp248-cpt-services-setting.php:93
 msgid "Input Examples"
-msgstr ""
+msgstr "דוגמאות לקלט"
 
 #: admin/class-wp248-cpt-services-setting.php:167
 msgid "Header"
-msgstr ""
+msgstr "כותרת"
 
 #: admin/class-wp248-cpt-services-setting.php:172
 msgid "Activate this setting to display the header."
-msgstr ""
+msgstr "הפעל הגדרה זו כדי להציג את הכותרת."
 
 #: admin/class-wp248-cpt-services-setting.php:196
 msgid "Select which areas of content you wish to display."
-msgstr ""
+msgstr "בחר את תחומי התוכן שברצונך להציג."
 
 #: admin/class-wp248-cpt-services-setting.php:197
 msgid "<small><i>* Check WP248 Elementor theme for instructions</i></small>"

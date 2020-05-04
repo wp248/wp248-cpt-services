@@ -133,12 +133,12 @@ class Wp248_Cpt_Services_Admin {
 		 */
 
 		$labels = [
-			"name" => __( "Categories", "Wp248_Cpt_Services" ),
-			"singular_name" => __( "Service Category", "Wp248_Cpt_Services" ),
+			"name" => __( "Categories", "wp248-cpt-services" ),
+			"singular_name" => __( "Service Category", "wp248-cpt-services" ),
 		];
 
 		$args = [
-			"label" => __( "Category", "Wp248_Cpt_Services" ),
+			"label" => __( "Category", "wp248-cpt-services" ),
 			"labels" => $labels,
 			"public" => true,
 			"publicly_queryable" => true,
@@ -164,12 +164,12 @@ class Wp248_Cpt_Services_Admin {
 		 */
 
 		$labels = [
-			"name" => __( "Services", "Wp248_Cpt_Services" ),
-			"singular_name" => __( "Service", "Wp248_Cpt_Services" ),
+			"name" => __( "Services", "wp248-cpt-services" ),
+			"singular_name" => __( "Service", "wp248-cpt-services" ),
 		];
 
 		$args = [
-			"label" => __( "Services", "Wp248_Cpt_Services" ),
+			"label" => __( "Services", "wp248-cpt-services" ),
 			"labels" => $labels,
 			"description" => "",
 			"public" => true,
