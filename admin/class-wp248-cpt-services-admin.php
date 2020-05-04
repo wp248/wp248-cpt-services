@@ -115,7 +115,7 @@ class Wp248_Cpt_Services_Admin {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-setting.php';
-		//require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-cpt.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-cpt.php';
 	}
 
 	public function create_service()
