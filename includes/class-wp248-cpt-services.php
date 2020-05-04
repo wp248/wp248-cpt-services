@@ -163,7 +163,6 @@ class Wp248_Cpt_Services {
 		/** Start actions */
 		$this->loader->add_action( 'init', $plugin_admin, 'create_service' );
 
-
 	}
 
 	/**

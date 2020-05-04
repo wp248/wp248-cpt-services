@@ -121,16 +121,7 @@ class Wp248_Cpt_Services_Admin {
 	public function create_service()
 	{
 		$this->create_custom_post();
-		add_action( 'init', 'create_custom_post' );
-		register_activation_hook(__FILE__, 'services_flush');
 		$this->register_tax_service_category();
-		add_action( 'init', 'register_101_tax_service_category' );
-
-
-	}
-	public function services_flush()
-	{
-		$this->create_custom_post();
 		flush_rewrite_rules();
 	}
 
@@ -166,9 +157,6 @@ class Wp248_Cpt_Services_Admin {
 		register_taxonomy( "service_category", [ "services" ], $args );
 	}
 
-
-
-
 	private function create_custom_post()
 	{
 		/**
@@ -197,7 +185,7 @@ class Wp248_Cpt_Services_Admin {
 			"exclude_from_search" => false,
 			"capability_type" => "post",
 			"map_meta_cap" => true,
-			"hierarchical" => true,
+			"hierarchical" => false,
 			"rewrite" => [ "slug" => "services", "with_front" => true ],
 			"query_var" => true,
 			"supports" => [ "title", "editor", "thumbnail" ],
