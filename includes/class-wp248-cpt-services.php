@@ -152,10 +152,17 @@ class Wp248_Cpt_Services {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wp248_Cpt_Services_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin 	= new Wp248_Cpt_Services_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_setting = new Wp248_Cpt_Services_Setting( $this->get_plugin_name(), $this->get_version() );
+		$plugin_cpt 	= new Wp248_Cpt_Services_Cpt( $this->get_plugin_name(), $this->get_version() );
+
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+		/** Start actions */
+		$this->loader->add_action( 'init', $plugin_admin, 'create_service' );
+
 
 	}
 

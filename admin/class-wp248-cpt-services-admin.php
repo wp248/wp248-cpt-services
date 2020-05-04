@@ -51,6 +51,7 @@ class Wp248_Cpt_Services_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->load_dependencies();
 
 	}
 
@@ -99,5 +100,111 @@ class Wp248_Cpt_Services_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp248-cpt-services-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+	/**
+	 * Load the required dependencies for the Admin facing functionality.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function load_dependencies()
+	{
+
+		/**
+		 * The class responsible for orchestrating the actions and filters of the
+		 * core plugin.
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-setting.php';
+		//require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-cpt.php';
+	}
+
+	public function create_service()
+	{
+		$this->create_custom_post();
+		add_action( 'init', 'create_custom_post' );
+		register_activation_hook(__FILE__, 'services_flush');
+		$this->register_tax_service_category();
+		add_action( 'init', 'register_101_tax_service_category' );
+
+
+	}
+	public function services_flush()
+	{
+		$this->create_custom_post();
+		flush_rewrite_rules();
+	}
+
+
+	private function register_tax_service_category() {
+
+		/**
+		 * Taxonomy: Services Category.
+		 */
+
+		$labels = [
+			"name" => __( "Categories", "Wp248_Cpt_Services" ),
+			"singular_name" => __( "Service Category", "Wp248_Cpt_Services" ),
+		];
+
+		$args = [
+			"label" => __( "Category", "Wp248_Cpt_Services" ),
+			"labels" => $labels,
+			"public" => true,
+			"publicly_queryable" => true,
+			"hierarchical" => true,
+			"show_ui" => true,
+			"show_in_menu" => true,
+			"show_in_nav_menus" => true,
+			"query_var" => true,
+			"rewrite" => [ 'slug' => 'service_category', 'with_front' => true, ],
+			"show_admin_column" => false,
+			"show_in_rest" => true,
+			"rest_base" => "service_category",
+			"rest_controller_class" => "WP_REST_Terms_Controller",
+			"show_in_quick_edit" => true,
+		];
+		register_taxonomy( "service_category", [ "services" ], $args );
+	}
+
+
+
+
+	private function create_custom_post()
+	{
+		/**
+		 * Post Type: Services.
+		 */
+
+		$labels = [
+			"name" => __( "Services", "Wp248_Cpt_Services" ),
+			"singular_name" => __( "Service", "Wp248_Cpt_Services" ),
+		];
+
+		$args = [
+			"label" => __( "Services", "Wp248_Cpt_Services" ),
+			"labels" => $labels,
+			"description" => "",
+			"public" => true,
+			"publicly_queryable" => true,
+			"show_ui" => true,
+			"show_in_rest" => true,
+			"rest_base" => "",
+			"rest_controller_class" => "WP_REST_Posts_Controller",
+			"has_archive" => false,
+			"show_in_menu" => true,
+			"show_in_nav_menus" => true,
+			"delete_with_user" => false,
+			"exclude_from_search" => false,
+			"capability_type" => "post",
+			"map_meta_cap" => true,
+			"hierarchical" => true,
+			"rewrite" => [ "slug" => "services", "with_front" => true ],
+			"query_var" => true,
+			"supports" => [ "title", "editor", "thumbnail" ],
+		];
+
+		register_post_type( "services", $args );
+	}
+
 
 }
