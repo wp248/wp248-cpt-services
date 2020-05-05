@@ -120,7 +120,7 @@ class Wp248_Cpt_Services {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp248-cpt-services-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'assets/class-wp248-cpt-services-public.php';
 
 		$this->loader = new Wp248_Cpt_Services_Loader();
 

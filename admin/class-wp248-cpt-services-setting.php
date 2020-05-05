@@ -54,6 +54,10 @@ class Wp248_Cpt_Services_Setting {
 		$this->version = $version;
 
 	}
+
+	/**
+	 * setup_plugin_options_menu
+	 */
 	public function setup_plugin_options_menu()
 	{
 		if (post_type_exists( 'services' )) {
@@ -66,8 +70,53 @@ class Wp248_Cpt_Services_Setting {
 				array($this, 'render_settings_page_content')
 			);
 		}
+		if (!($this->is_menu_item_exists('wp248_menu_settings'))) {
+			add_menu_page(
+					'WP248',
+					__('WP248 Settings', 'wp248-cpt-services'),
+					'manage_options',
+					'wp248_menu_settings',
+					array($this, 'render_settings_page_content'),
+					plugins_url('/assets/images/limitlessv-logo-no-bg-logo-20x20.svg', __DIR__)
+			);
+		}
+		if (!($this->is_submenu_item_exists('wp248_menu_settings','wp248_cpt_services/wp248_menu_settings'))) {
+			add_submenu_page(
+				'wp248_menu_settings',							// The parent_slug
+				__('Services Settings', 'wp248-cpt-services'),	// The title to be displayed in the browser window for this page.
+				__('Services Settings', 'wp248-cpt-services'),	// The text to be displayed for this menu item
+				'manage_options',								// Which type of users can see this menu item
+				'wp248_cpt_services/wp248_menu_settings',		// The unique ID - that is, the slug - for this menu item
+				array($this, 'render_settings_page_content')	// The name of the function to call when rendering this menu's page
+			);
+		}
 	}
 
+	/**
+	 * Check menu item exists
+	 * @param string $main_menu_unique_id
+	 * @return bool
+	 */
+	public function is_menu_item_exists($main_menu_unique_id='')
+	{
+		if (!( empty ( $GLOBALS['admin_page_hooks'][$main_menu_unique_id] ) ))
+			return true;
+}
+
+	/**
+	 * Check sub menu item exists under top menu
+	 * @param string $main_menu_unique_id
+	 * @param string $submenu_unique_id
+	 * @return bool
+	 */
+	public function is_submenu_item_exists($main_menu_unique_id='', $submenu_unique_id='')
+	{
+		global $submenu;
+		if (isset( $submenu[ $main_menu_unique_id ] )
+				&& in_array( $main_menu_unique_id, wp_list_pluck( $submenu[ $main_menu_unique_id ], 2 ) )
+		)
+			return true;
+	}
 	/**
 	 * Renders a simple page to display for the theme menu defined above.
 	 */
