@@ -10,7 +10,7 @@
  *
  * @link              wp248.com
  * @since             1.0.0
- * @package           Wp248_Cpt_Services
+ * @package           wp248_cpt_services
  *
  * @wordpress-plugin
  * Plugin Name:       WP248 CPT Services
@@ -20,9 +20,19 @@
  * Author:            wp248
  * Author URI:        wp248.com
  * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       wp248-cpt-services
  * Domain Path:       /languages
+ *
+ * wp248_cpt_services is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * wp248_cpt_services is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details. *
  */
 
 // If this file is called directly, abort.
@@ -35,15 +45,17 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WP248_CPT_SERVICES_VERSION', '1.0.0' );
+define( 'wp248_cpt_services_VERSION', '1.0.0' );
+
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-wp248-cpt-services-activator.php
  */
+
 function activate_wp248_cpt_services() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp248-cpt-services-activator.php';
-	Wp248_Cpt_Services_Activator::activate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-wp248-cpt-services-activator.php';
+	wp248_cpt_services_Activator::activate();
 }
 
 /**
@@ -52,7 +64,7 @@ function activate_wp248_cpt_services() {
  */
 function deactivate_wp248_cpt_services() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp248-cpt-services-deactivator.php';
-	Wp248_Cpt_Services_Deactivator::deactivate();
+	wp248_cpt_services_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_wp248_cpt_services' );
@@ -74,9 +86,19 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp248-cpt-services.php';
  * @since    1.0.0
  */
 function run_wp248_cpt_services() {
-
-	$plugin = new Wp248_Cpt_Services();
+	$plugin = new wp248_cpt_services();
 	$plugin->run();
-
 }
+
+/**
+ *
+ */
+function wp248_cpt_services_fail_php_version() {
+	$message = esc_html__( 'WP248 CPT Services requires PHP version 5.4+, plugin is currently NOT ACTIVE.', 'wp248_cpt_services' );
+	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
+	echo wp_kses_post( $html_message );
+}
+
+
 run_wp248_cpt_services();
+

@@ -6,8 +6,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  * @author     wp248 <info@wp248.com>
  */
-class Wp248_Cpt_Services_Activator {
+class wp248_cpt_services_Activator {
 
 	/**
 	 * Short Description. (use period)

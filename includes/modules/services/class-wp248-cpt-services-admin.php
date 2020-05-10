@@ -6,8 +6,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/admin
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/admin
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/admin
  * @author     wp248 <info@wp248.com>
  */
-class Wp248_Cpt_Services_Admin {
+class wp248_cpt_services_admin {
 
 	/**
 	 * The ID of this plugin.
@@ -66,15 +66,15 @@ class Wp248_Cpt_Services_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wp248_Cpt_Services_Loader as all of the hooks are defined
+		 * defined in wp248_cpt_services_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wp248_Cpt_Services_Loader will then create the relationship
+		 * The wp248_cpt_services_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp248-cpt-services-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/wp248-cpt-services-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -89,15 +89,15 @@ class Wp248_Cpt_Services_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wp248_Cpt_Services_Loader as all of the hooks are defined
+		 * defined in wp248_cpt_services_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wp248_Cpt_Services_Loader will then create the relationship
+		 * The wp248_cpt_services_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp248-cpt-services-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/wp248-cpt-services-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -114,7 +114,7 @@ class Wp248_Cpt_Services_Admin {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wp248-cpt-services-setting.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/modules/services-setting.php';
 	}
 
 	public function register_service_post_type()

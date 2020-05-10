@@ -9,8 +9,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  * @author     wp248 <info@wp248.com>
  */
-class Wp248_Cpt_Services {
+class wp248_cpt_services {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Wp248_Cpt_Services {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Wp248_Cpt_Services_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      wp248_cpt_services_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,8 +67,8 @@ class Wp248_Cpt_Services {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'WP248_CPT_SERVICES_VERSION' ) ) {
-			$this->version = WP248_CPT_SERVICES_VERSION;
+		if ( defined( 'wp248_cpt_services_VERSION' ) ) {
+			$this->version = wp248_cpt_services_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -86,10 +86,10 @@ class Wp248_Cpt_Services {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wp248_Cpt_Services_Loader. Orchestrates the hooks of the plugin.
-	 * - Wp248_Cpt_Services_i18n. Defines internationalization functionality.
-	 * - Wp248_Cpt_Services_Admin. Defines all hooks for the admin area.
-	 * - Wp248_Cpt_Services_Public. Defines all hooks for the public side of the site.
+	 * - wp248_cpt_services_Loader. Orchestrates the hooks of the plugin.
+	 * - wp248_cpt_services_i18n. Defines internationalization functionality.
+	 * - wp248_cpt_services_admin. Defines all hooks for the admin area.
+	 * - wp248_cpt_services_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -114,7 +114,7 @@ class Wp248_Cpt_Services {
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp248-cpt-services-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/modules/services.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
@@ -122,14 +122,14 @@ class Wp248_Cpt_Services {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'assets/class-wp248-cpt-services-public.php';
 
-		$this->loader = new Wp248_Cpt_Services_Loader();
+		$this->loader = new wp248_cpt_services_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Wp248_Cpt_Services_i18n class in order to set the domain and to register the hook
+	 * Uses the wp248_cpt_services_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Wp248_Cpt_Services {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Wp248_Cpt_Services_i18n();
+		$plugin_i18n = new wp248_cpt_services_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,9 +152,8 @@ class Wp248_Cpt_Services {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin 	= new Wp248_Cpt_Services_Admin( $this->get_plugin_name(), $this->get_version() );
-		$plugin_settings = new Wp248_Cpt_Services_Setting( $this->get_plugin_name(), $this->get_version() );
-		$plugin_cpt 	= new Wp248_Cpt_Services_Cpt( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin 	= new cpt_services( $this->get_plugin_name(), $this->get_version() );
+		$plugin_settings = new cpt_services_setting( $this->get_plugin_name(), $this->get_version() );
 
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
@@ -184,7 +183,7 @@ class Wp248_Cpt_Services {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Wp248_Cpt_Services_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new wp248_cpt_services_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -215,7 +214,7 @@ class Wp248_Cpt_Services {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Wp248_Cpt_Services_Loader    Orchestrates the hooks of the plugin.
+	 * @return    wp248_cpt_services_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

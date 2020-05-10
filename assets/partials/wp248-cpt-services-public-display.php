@@ -8,8 +8,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/public/partials
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/public/partials
  */
 ?>
 

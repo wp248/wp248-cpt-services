@@ -9,8 +9,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  * @author     wp248 <info@wp248.com>
  */
-class Wp248_Cpt_Services_i18n {
+class wp248_cpt_services_i18n {
 
 
 	/**

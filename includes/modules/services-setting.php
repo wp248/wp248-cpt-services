@@ -5,8 +5,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/admin
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/admin
  */
 
 
@@ -16,12 +16,12 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/admin
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes/modules
  * @author     wp248 <info@wp248.com>
  */
 
-class Wp248_Cpt_Services_Setting {
+class cpt_services_setting {
 
 	/**
 	 * The ID of this plugin.

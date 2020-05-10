@@ -22,7 +22,7 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
+ * @package    wp248_cpt_services
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -6,8 +6,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/public
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/public
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/public
  * @author     wp248 <info@wp248.com>
  */
-class Wp248_Cpt_Services_Public
+class wp248_cpt_services_Public
 {
 
 	/**
@@ -68,10 +68,10 @@ class Wp248_Cpt_Services_Public
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wp248_Cpt_Services_Loader as all of the hooks are defined
+		 * defined in wp248_cpt_services_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wp248_Cpt_Services_Loader will then create the relationship
+		 * The wp248_cpt_services_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -92,10 +92,10 @@ class Wp248_Cpt_Services_Public
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wp248_Cpt_Services_Loader as all of the hooks are defined
+		 * defined in wp248_cpt_services_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wp248_Cpt_Services_Loader will then create the relationship
+		 * The wp248_cpt_services_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */

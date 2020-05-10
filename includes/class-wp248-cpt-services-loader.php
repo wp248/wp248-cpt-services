@@ -6,8 +6,8 @@
  * @link       wp248.com
  * @since      1.0.0
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Wp248_Cpt_Services
- * @subpackage Wp248_Cpt_Services/includes
+ * @package    wp248_cpt_services
+ * @subpackage wp248_cpt_services/includes
  * @author     wp248 <info@wp248.com>
  */
-class Wp248_Cpt_Services_Loader {
+class wp248_cpt_services_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
