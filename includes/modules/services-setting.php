@@ -58,7 +58,8 @@ class cpt_services_setting {
 	/**
 	 * setup_plugin_options_menu
 	 */
-	public function setup_plugin_options_menu()
+	public function setup_plugin_options_menu(){}
+	public function setup_plugin_options_menu1()
 	{
 		if (post_type_exists( 'services' )) {
 			add_submenu_page(
@@ -117,6 +118,7 @@ class cpt_services_setting {
 		)
 			return true;
 	}
+
 	/**
 	 * Renders a simple page to display for the theme menu defined above.
 	 */
